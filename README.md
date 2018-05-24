@@ -6,4 +6,4 @@ Função: O programa irá receber os parâmetros de controle do motor, através 
 
 
 
-<img src="Imagens/Tutorial.PNG" width="48">
+<img src="Imagens/Tutorial.PNG" width="500">
