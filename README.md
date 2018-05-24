@@ -1,5 +1,7 @@
-Fazer um programa no PC para controlar e testar os par‚metros do controle.
+Fazer um programa no PC para controlar e testar os par√¢metros do controle.
 
-MotivaÁ„o: Melhorar a movimentaÁ„o dos robÙs do projeto de futebol de robÙs Very Small Size (VSS), atravÈs do controle da velocidade.   
+Motiva√ß√£o: Melhorar a movimenta√ß√£o dos rob√¥s do projeto de futebol de rob√¥s Very Small Size (VSS), atrav√©s do controle da velocidade.   
 
-FunÁ„o: O programa ir· receber os par‚metros de controle do motor, atravÈs da interface USART ou USB. Esses valores podem ser alterados e testados atÈ que se obtenha a velocidade ideal desejada.
+Fun√ß√£o: O programa ir√° receber os par√¢metros de controle do motor, atrav√©s da interface USART ou USB. Esses valores podem ser alterados e testados at√© que se obtenha a velocidade ideal desejada.
+
+{{thumbnail(Imagens/Tutorial.PNG,size=400)}}
