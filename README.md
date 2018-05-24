@@ -18,4 +18,4 @@ Esboço da interface: usando a interface gráfica do LabVIEW, foi criado um esbo
 Para entender melhor o esboço será usada a seguintes imagens: 
 
 
-<img src="Imagens/Esboco2.png" width="500"> <img src="Imagens/Fluxograma2.png" width="500">
+<img src="Imagens/Esboco2.png" width="300">  <img src="Imagens/Fluxograma2.png" width="300">
