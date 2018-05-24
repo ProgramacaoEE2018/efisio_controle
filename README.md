@@ -9,3 +9,8 @@ Tutorial: foi feito um tutorial sobre como usar a interface gráfica do LabVIEW,
 O resultado foi o seguinte gráfico:
 
 <img src="Imagens/Tutorial.PNG" width="500">
+
+
+Esboço da interface: usando a interface gráfica do LabVIEW, foi criado um esboço de como ficará o projeto:
+
+<img src="Imagens/Esboco.PNG" width="500">
