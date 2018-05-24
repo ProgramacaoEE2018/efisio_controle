@@ -13,4 +13,4 @@ O resultado foi o seguinte gráfico:
 
 Esboço da interface: usando a interface gráfica do LabVIEW, foi criado um esboço de como ficará o projeto:
 
-<img src="Imagens/Esboco.PNG" width="500">
+<img src="Imagens/" width="500">
