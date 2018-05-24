@@ -5,4 +5,4 @@ Motivação: Melhorar a movimentação dos robôs do projeto de futebol de robô
 Função: O programa irá receber os parâmetros de controle do motor, através da interface USART ou USB. Esses valores podem ser alterados e testados até que se obtenha a velocidade ideal desejada.
 
 
-![picture](Imagens/Tutorial.PNG)
+![picture](Imagens/Tutorial.PNG=250x250)
