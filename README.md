@@ -28,3 +28,16 @@ Em B, será recebido a velocidade da roda do motor
 Em C, será gerado o gráfico da velocidade pelo tempo
 
 Em D, o usuário irá alterar os valores do parâmetro. Com a alteração, o programa irá fazer tudo novamente.
+
+Programa:
+
+O programa recebe dados do usuario e responde, conforme o que ele pede.
+
+Ele pode pedir a velocidade ou enviar o valor para o robô, conforme video enviado na pasta de videos.
+
+Por fim ele terá acesso a seguinte interface gráfica:
+
+<img src="Imagens/interface grafica.jpeg" width="500">
+
+
+
