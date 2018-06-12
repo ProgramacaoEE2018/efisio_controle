@@ -39,5 +39,7 @@ Por fim ele terá acesso a seguinte interface gráfica:
 
 <img src="Imagens/interface grafica.jpeg" width="500">
 
+Nela o usuario observa a velocidade das rodas no gráfico. E escolhe os valores na região onde tem write, podendo escolher a velocidade da roda direita, esquerda ou ambas.
+
 
 
