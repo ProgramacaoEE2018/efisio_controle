@@ -794,21 +794,28 @@ void StartDefaultTask(void const * argument)
 
 int speed_usb_0;
 int speed_usb_1;
+int desired_speed0;
+int desired_speed1;
 int desired_speed;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	float velocidade_enviada;
+	static float p;
+	float velocidade_enviada0;
+	float velocidade_enviada1;
 	static int16_t m0p=0, m1p=0,old_c0=0,old_c1=0;
 	static float speed_m0= 0.0f;
 	static float speed_m1= 0.0f;
 	bool controlbit = true;
 //uint8_t data_to_send[20] = "Damogran Labs";
 uint8_t buffer_to_send[64];
-
-speed_usb_0=speed_m0*1000;
+p=speed_m0*1000;
+speed_usb_0=(int)p;
 speed_usb_1=speed_m1*1000;
-velocidade_enviada=(float)desired_speed;
-velocidade_enviada=(float)velocidade_enviada/1000;
+velocidade_enviada0=(float)desired_speed0;
+velocidade_enviada0=(float)velocidade_enviada0/1000;
+
+velocidade_enviada1=(float)desired_speed1;
+velocidade_enviada1=(float)velocidade_enviada1/1000;
 //	sprintf((char*)buffer_to_send,"%i | %i \n",a,b);
 //
 //
@@ -848,8 +855,13 @@ velocidade_enviada=(float)velocidade_enviada/1000;
 	float derror_m1=0.0f;
 	//SPI
 	static float dado;
-	static float velocidade_des0 =velocidade_enviada;//.188495;
-	static float velocidade_des1 =velocidade_enviada;
+	static float velocidade_des0 =0;
+		velocidade_des0=velocidade_enviada0;//.188495;
+
+	static float velocidade_des1 =0;
+	velocidade_des1=velocidade_enviada1;//.188495;
+
+
 	static int i;
 	if(htim==&htim1){
 		static uint8_t i=0;
