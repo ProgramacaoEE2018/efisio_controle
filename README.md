@@ -35,7 +35,7 @@ O programa recebe dados do usuario e responde, conforme o que ele pede.
 
 Os dados do usuário são enviados em forma de comandos, que indicam o que o programa deve fazer, conforme a figur a seguir:
 
-<img src="Imagens/interface cpp1.PNG" width="500">
+<img src="Imagens/cpp1.PNG" width="500">
 
 Na linha 12, foi definido uma classe cmd_info que funciona recebendo o comando através de argumentos.
 
