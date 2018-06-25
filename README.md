@@ -42,14 +42,22 @@ Os dados do usuário são enviados em forma de comandos, que indicam o que o pro
 
 Na linha 12, foi definido uma classe cmd_info que funciona recebendo o comando através de argumentos.
 
+Com os dados enviados, a interface gráfica recebe os dados, conforme o diagrama de classe, através da GetVelocidade(void). Com o InitTimer e dado da velocidade, é traçado o gráfico (PlotGraphic).
 
-Ele pode pedir a velocidade ou enviar o valor para o robô, conforme video enviado na pasta de videos.
+<img src="Diagrama_Classe.png" width="500">
 
-Por fim ele terá acesso a seguinte interface gráfica:
+Para enviar os dados para a roda, o usuário seleciona a roda em Options (enviando E ou D), envia a velocidade em SendVelocidade e seleciona a porta serial em VISA_ResourceName.
+
+Por fim ele terá acesso a seguinte interface gráfica, em que o gráfico é feito em PlotGraphic:
 
 <img src="Imagens/interface grafica.jpeg" width="500">
 
 Nela o usuario observa a velocidade das rodas no gráfico. E escolhe os valores na região onde tem write, podendo escolher a velocidade da roda direita, esquerda ou ambas.
+
+Para melhor visualização do programa em funcionamento foi feito o seguinte vídeo ilustrativo:
+
+{{video(Vídeos/Demonstração.mp4)}}
+
 
 
 
