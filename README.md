@@ -21,13 +21,15 @@ Para entender melhor o esboço será usada a seguintes imagens:
 <img src="Imagens/Esboco2.png" width="300">  <img src="Imagens/Fluxograma2.png" width="300">
 
 
-Em A, observa-se onde o programa irá parar ou começar.
+Em A, o programa será iniciado ao escolher a porta serial
 
-Em B, será recebido a velocidade da roda do motor
+Em B, será enviado a velocidade da roda do motor
 
-Em C, será gerado o gráfico da velocidade pelo tempo
+Em C, será recebido a velocidade da roda do motor
 
-Em D, o usuário irá alterar os valores do parâmetro. Com a alteração, o programa irá fazer tudo novamente.
+Em D, será gerado o gráfico da velocidade pelo tempo
+
+Em E, o usuário irá alterar os valores da velocidade desejada. Com a alteração, o programa irá fazer tudo novamente.
 
 Programa:
 
