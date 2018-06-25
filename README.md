@@ -25,7 +25,7 @@ Em A, o programa será iniciado ao escolher a porta serial
 
 Em B, será enviado a velocidade da roda do motor
 
-Em C, será recebido a velocidade da roda do motor
+Em C, será recebida e medida a velocidade da roda do motor
 
 Em D, será gerado o gráfico da velocidade pelo tempo
 
