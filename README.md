@@ -57,7 +57,7 @@ Para enviar os dados para a roda, o usuário seleciona a roda em Options (envian
 
 Por fim ele terá acesso a seguinte interface gráfica, em que o gráfico é feito em PlotGraphic:
 
-<img src="Imagens/interface grafica.jpeg" width="500">
+<img src="Imagens/interface grafica.jpeg" width="700">
 
 Nela o usuario observa a velocidade da roda direita no gráfico. Escolhe os valores na região onde tem write, podendo escolher a velocidade da roda direita, esquerda ou ambas.
 
