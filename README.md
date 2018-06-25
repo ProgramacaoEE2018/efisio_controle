@@ -30,6 +30,7 @@ Em C, será recebida e medida a velocidade da roda do motor
 Em D, será gerado o gráfico da velocidade pelo tempo
 
 Em E, o usuário irá alterar os valores da velocidade desejada. Com a alteração, o programa irá fazer tudo novamente.
+Caso contrário, ele pode finalizar o programa (em F).
 
 Programa:
 
