@@ -10,6 +10,13 @@ O resultado foi o seguinte gráfico:
 
 <img src="Imagens/Tutorial.PNG" width="500">
 
+Fluxograma:
+
+<img src="Fluxograma.png" width="500">
+
+Diagrama de Classes:
+
+<img src="Diagrama_Classe.png" width="500">
 
 Esboço da interface: usando a interface gráfica do LabVIEW, foi criado um esboço de como ficará o projeto:
 
