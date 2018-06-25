@@ -44,7 +44,7 @@ Na linha 12, foi definido uma classe cmd_info que funciona recebendo o comando a
 
 Com os dados enviados, a interface gráfica recebe os dados, conforme o diagrama de classe, através da GetVelocidade(void). Com o InitTimer e dado da velocidade, é traçado o gráfico (PlotGraphic).
 
-<img src="Diagrama_Classe.png" width="500">
+<img src="Diagrama_Classe.png" width="300">
 
 Para enviar os dados para a roda, o usuário seleciona a roda em Options (enviando E ou D), envia a velocidade em SendVelocidade e seleciona a porta serial em VISA_ResourceName.
 
