@@ -36,7 +36,7 @@ Programa:
 
 O programa recebe dados do usuario e responde, conforme o que ele pede.
 
-Os dados do usuário são enviados em forma de comandos, que indicam o que o programa deve fazer, conforme a figur a seguir:
+Os dados do usuário são enviados em forma de comandos, que indicam o que o programa deve fazer, conforme a figura a seguir:
 
 <img src="Imagens/cpp1.PNG" width="500">
 
