@@ -54,9 +54,8 @@ Por fim ele terá acesso a seguinte interface gráfica, em que o gráfico é fei
 
 Nela o usuario observa a velocidade das rodas no gráfico. E escolhe os valores na região onde tem write, podendo escolher a velocidade da roda direita, esquerda ou ambas.
 
-Para melhor visualização do programa em funcionamento foi feito o seguinte vídeo ilustrativo:
+Para melhor visualização do programa em funcionamento foi feito um vídeo ilustrativo na pasta vídeos.
 
-{{video(Vídeos/Demonstração.mp4)}}
 
 
 
