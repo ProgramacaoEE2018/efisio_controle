@@ -8,6 +8,9 @@ extern int desired_speed;
 extern int desired_speed0;
 extern int desired_speed1;
 
+extern int kp_usb;
+extern int ki_usb;
+extern int kd_usb;
 
 uint16_t cmd_info(uint16_t argc, uint8_t *argv8[]){
 	const char **argv=(const char **)argv8;
