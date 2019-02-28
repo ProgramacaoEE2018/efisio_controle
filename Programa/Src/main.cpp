@@ -798,7 +798,16 @@ int desired_speed0;
 int desired_speed1;
 int desired_speed;
 
+int kp_usb;
+int ki_usb;
+int kd_usb;
+
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+
+	float kp;
+	float ki;
+	float kd;
 	static float p;
 	float velocidade_enviada0;
 	float velocidade_enviada1;
@@ -844,9 +853,16 @@ velocidade_enviada1=(float)velocidade_enviada1/1000;
 	static int16_t hist_m0p[13], hist_m1p[13];
 	static float pwmh[13];
 	static float pwmh1[13];
-	static float kp = 100.0f;
-	static float ki=190.00f;
-	static float kd = 00.0f;
+//  Constantes PID
+//	static float kp = 100.0f;
+//	static float ki=190.00f;
+//	static float kd = 00.0f;
+    kp=(float)kp_usb;
+    kp=(float)kp/1000;
+    ki=(float)ki_usb;
+    ki=(float)ki/1000;
+    kd=(float)kd_usb;
+    kd=(float)kd/1000;
 	float ierror_m0=0.0f;
 	float ierror_m1=0.0f;
 	static float last_error_m0[20];
