@@ -12,21 +12,34 @@ extern int kp_usb;
 extern int ki_usb;
 extern int kd_usb;
 
+//arcg==1: enviar pra porta serial os valores atuais de kp ki e kd
+//argc==2: se o segundo argumento for M1, enviar pra portal serial a velocidade atual da roda do motor M1, se for M0...
+//argc==3: o segundo argumento vai ser "M1" ou "M0" e o terceiro, o valor de velocidade q deve ser enviado pro respectivo motor
+//argc==4: os argumentos 2, 3 e 4 devem ser kp ki e kd, respectivamente
+
+
 uint16_t cmd_info(uint16_t argc, uint8_t *argv8[]){
 	const char **argv=(const char **)argv8;
 	uint16_t size=0;
 	char* buffer=(char*)argv[0];
 	static char roda;
-	roda= argv8[2][0];
-	if(argc==1){
-//		size+=sprintf(buffer+size, "Microcontroladores 2017\r\n");
+	roda= argv8[3][0];
+	if(argc==1){// ler os valores das contantes PID
 
-		size+=sprintf(buffer+size,"%i\r\n",speed_usb_0);
+
+
+		//		size+=sprintf(buffer+size, "Microcontroladores 2017\r\n");
+
+		//size+=sprintf(buffer+size,"%i\r\n",speed_usb_0); --Ler a velocidade de um motor
+
+
+		size+=sprintf(buffer+size,"%i %i %i\r\n",kp_usb,ki_usb,kd_usb); //--Ler as constantes PID
+
 
 
 	}
 
-	else if(argc==2){
+	else if(argc==2){//manda a mesma velocidade para os dois motores
 			//size+=sprintf(buffer+size, "%s\r\n", argv8[1]);
 
 		desired_speed= atoi((char*)argv8[1]);
@@ -38,7 +51,7 @@ uint16_t cmd_info(uint16_t argc, uint8_t *argv8[]){
 
 
 		}
-	else if(argc==3){
+	else if(argc==3){// manda velocidade para uma das rodas escolhidas
 				//size+=sprintf(buffer+size, "%s\r\n", argv8[1]);
 
 				if(roda=='E'){
@@ -68,12 +81,24 @@ uint16_t cmd_info(uint16_t argc, uint8_t *argv8[]){
 
 			}
 
-	else {
+	else if(argc==4){//manda a mesma velocidade para os dois motores
+				//size+=sprintf(buffer+size, "%s\r\n", argv8[1]);
+
+			kp_usb= atoi((char*)argv8[1]);
+			ki_usb= atoi((char*)argv8[2]);
+			kd_usb= atoi((char*)argv8[3]);
+
+			size+=sprintf(buffer+size, "%d\r\n", desired_speed);
+
+	}
+
+	else {//error
 		size+=sprintf(buffer+size, "Syntax: info\r\n");
 	}
+
 	return size;
 }
 
 
-CommandLine cmdline({"velocidade"},
+CommandLine cmdline({"usb"},
 					{cmd_info});
