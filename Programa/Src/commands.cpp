@@ -33,42 +33,63 @@ uint16_t cmd_info(uint16_t argc, uint8_t *argv8[]){
 		//size+=sprintf(buffer+size,"%i\r\n",speed_usb_0); --Ler a velocidade de um motor
 
 
-		size+=sprintf(buffer+size,"%i %i %i\r\n",kp_usb,ki_usb,kd_usb); //--Ler as constantes PID
+		size+=sprintf(buffer+size,"%d %d %d\r\n",kp_usb,ki_usb,kd_usb); //--Ler as constantes PID
 
 
 
 	}
 
-	else if(argc==2){//manda a mesma velocidade para os dois motores
+	else if(argc==2){//Ler a velocidade de cada motor
 			//size+=sprintf(buffer+size, "%s\r\n", argv8[1]);
+//
+//		desired_speed= atoi((char*)argv8[1]);
+//
+//		desired_speed0=desired_speed;
+//		desired_speed1=desired_speed;
+//
+//			size+=sprintf(buffer+size, "%d\r\n", desired_speed);
 
-		desired_speed= atoi((char*)argv8[1]);
+		if(roda=='M0'){
 
-		desired_speed0=desired_speed;
-		desired_speed1=desired_speed;
+						size+=sprintf(buffer+size, "%d\r\n", desired_speed0);
 
-			size+=sprintf(buffer+size, "%d\r\n", desired_speed);
+						}
+
+		else if(roda=='M1') {
+
+
+						size+=sprintf(buffer+size, "%d\r\n", desired_speed1);
+
+										}
+
+
+
+		//		        desired_speed = atoi((char*)argv8[1]);
+		//
+		//				size+=sprintf(buffer+size, "%d\r\n", desired_speed);
+		//
+
+
 
 
 		}
 	else if(argc==3){// manda velocidade para uma das rodas escolhidas
 				//size+=sprintf(buffer+size, "%s\r\n", argv8[1]);
 
-				if(roda=='E'){
+				if(roda=='M0'){
 
-					 desired_speed0 = atoi((char*)argv8[1]);
-					 desired_speed1=0;
+					           desired_speed0 = atoi((char*)argv8[1]);
+					           //desired_speed1=0; - caso o usuário queira que a outra roda pare
 
-									size+=sprintf(buffer+size, "%d\r\n", desired_speed0);
+							   size+=sprintf(buffer+size, "%d\r\n", desired_speed0);
 
 				}
 
-				else {
+				else if(roda=='M1') {
 
-									 desired_speed1 = atoi((char*)argv8[1]);
-									 desired_speed0=0;
-
-													size+=sprintf(buffer+size, "%d\r\n", desired_speed1);
+					                  desired_speed1 = atoi((char*)argv8[1]);
+									 //desired_speed0=0; - caso o usuário queira que a outra roda pare
+									  size+=sprintf(buffer+size, "%d\r\n", desired_speed1);
 
 								}
 
@@ -81,7 +102,7 @@ uint16_t cmd_info(uint16_t argc, uint8_t *argv8[]){
 
 			}
 
-	else if(argc==4){//manda a mesma velocidade para os dois motores
+	else if(argc==4){//manda as constantes PID
 				//size+=sprintf(buffer+size, "%s\r\n", argv8[1]);
 
 			kp_usb= atoi((char*)argv8[1]);
