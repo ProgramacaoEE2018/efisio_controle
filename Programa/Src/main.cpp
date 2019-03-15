@@ -851,7 +851,7 @@ velocidade_enviada1=(float)velocidade_enviada1/1000;
 	static float pwm_m0 =0.0f,pwm_m1=0.0f;
 	//controle
 	static int16_t hist_m0p[13], hist_m1p[13];
-	static float pwmh[13];
+	static float pwmh0[13];
 	static float pwmh1[13];
 //  Constantes PID
 //	static float kp = 100.0f;
@@ -949,7 +949,7 @@ velocidade_enviada1=(float)velocidade_enviada1/1000;
 			pwm_m1 = 300.0f*velocidade_des1 + kp*e_m1 + ki*ierror_m1 + kd*derror_m1;
 			pwm_m1=-pwm_m1;
 
-			pwmh[i%13]=speed_m0;
+			pwmh0[i%13]=speed_m0;
 			pwmh1[i%13]=speed_m1;
 
 			if(pwm_m0>1000.0f)

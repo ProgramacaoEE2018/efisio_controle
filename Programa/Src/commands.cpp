@@ -51,14 +51,14 @@ uint16_t cmd_info(uint16_t argc, uint8_t *argv8[]){
 
 		if(roda=='M0'){
 
-						size+=sprintf(buffer+size, "%d\r\n", desired_speed0);
+						size+=sprintf(buffer+size, "%d %d\r\n", desired_speed0,speed_usb_0);
 
 						}
 
 		else if(roda=='M1') {
 
 
-						size+=sprintf(buffer+size, "%d\r\n", desired_speed1);
+						size+=sprintf(buffer+size, "%d %d\r\n", desired_speed1,speed_usb_1);
 
 										}
 
@@ -81,7 +81,7 @@ uint16_t cmd_info(uint16_t argc, uint8_t *argv8[]){
 					           desired_speed0 = atoi((char*)argv8[1]);
 					           //desired_speed1=0; - caso o usuário queira que a outra roda pare
 
-							   size+=sprintf(buffer+size, "%d\r\n", desired_speed0);
+					       	size+=sprintf(buffer+size, "%d %d\r\n", desired_speed0,speed_usb_0);
 
 				}
 
@@ -89,7 +89,7 @@ uint16_t cmd_info(uint16_t argc, uint8_t *argv8[]){
 
 					                  desired_speed1 = atoi((char*)argv8[1]);
 									 //desired_speed0=0; - caso o usuário queira que a outra roda pare
-									  size+=sprintf(buffer+size, "%d\r\n", desired_speed1);
+					          		size+=sprintf(buffer+size, "%d %d\r\n", desired_speed1,speed_usb_1);
 
 								}
 
@@ -109,7 +109,7 @@ uint16_t cmd_info(uint16_t argc, uint8_t *argv8[]){
 			ki_usb= atoi((char*)argv8[2]);
 			kd_usb= atoi((char*)argv8[3]);
 
-			size+=sprintf(buffer+size, "%d\r\n", desired_speed);
+			//size+=sprintf(buffer+size, "%d\r\n", desired_speed); - vou enviar nada
 
 	}
 
