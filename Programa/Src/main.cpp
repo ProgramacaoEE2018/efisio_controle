@@ -794,6 +794,8 @@ void StartDefaultTask(void const * argument)
 
 int speed_usb_0;
 int speed_usb_1;
+int speed_saida_0;
+int speed_saida_1;
 int desired_speed0;
 int desired_speed1;
 int desired_speed;
@@ -946,7 +948,9 @@ velocidade_enviada1=(float)velocidade_enviada1/1000;
 			if(ierror_m1 < -1000) ierror_m1 = -1000;
 
 			pwm_m0 = 300.0f*velocidade_des0 + kp*e_m0 + ki*ierror_m0 + kd*derror_m0;
+			speed_saida_0 = pwm_m0*1000;
 			pwm_m1 = 300.0f*velocidade_des1 + kp*e_m1 + ki*ierror_m1 + kd*derror_m1;
+			speed_saida_1 = pwm_m1*1000;
 			pwm_m1=-pwm_m1;
 
 			pwmh0[i%13]=speed_m0;
