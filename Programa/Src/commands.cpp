@@ -35,6 +35,9 @@ uint16_t cmd_info(uint16_t argc, uint8_t *argv8[]){
 		//size+=sprintf(buffer+size,"%i\r\n",speed_usb_0); --Ler a velocidade de um motor
 
 
+		size+=sprintf(buffer+size,"oi"); //--Ler as constantes PID
+
+
 		size+=sprintf(buffer+size,"%d %d %d\r\n",kp_usb,ki_usb,kd_usb); //--Ler as constantes PID
 
 
