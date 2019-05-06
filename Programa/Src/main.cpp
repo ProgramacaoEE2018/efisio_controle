@@ -641,7 +641,7 @@ pb_istream_t pb_istream_from_circularbuffer(CircularBuffer<uint8_t> *circularbuf
 
 // Parâmetros e constantes:
 
-uint8_t id=10;  //ID
+uint8_t id=1;  //ID
 uint8_t channel=92;
 uint64_t address=0xE7E7E7E700;
 uint32_t last_packet_ms = 0;
@@ -745,9 +745,9 @@ void StartDefaultTask(void const * argument)
 	nrf.Config(); // configurações : DPL OK, ACK OK, ACK_NOT OK, POWER UP OK
 	nrf.StartRX_ESB(channel, address + id, 32, 1);
 	nrf.TxPackage_ESB(channel, address + id, 0,(uint8_t*) "TESTE", 5);
-	while(nrf.Busy()){
-		nrf.InterruptCallback();
-	}
+	//while(nrf.Busy()){
+		//nrf.InterruptCallback();
+	//}
 	nrf.StartRX_ESB(channel, address + id, 32, 1);
 	//////////////////////////////////////////
 
@@ -803,9 +803,19 @@ int desired_speed;
 int kp_usb;
 int ki_usb;
 int kd_usb;
-
+int estado =0;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+
+	if(estado==1){
+	HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+
+	}
+
+	else{
+	HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+	}
+
 
 	float kp;
 	float ki;
@@ -819,9 +829,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	bool controlbit = true;
 //uint8_t data_to_send[20] = "Damogran Labs";
 uint8_t buffer_to_send[64];
-p=speed_m0*1000;
-speed_usb_0=(int)p;
-speed_usb_1=speed_m1*1000;
+
+//speed_usb_0=speed_m0*1000;
+//speed_usb_1=speed_m1*1000;
 velocidade_enviada0=(float)desired_speed0;
 velocidade_enviada0=(float)velocidade_enviada0/1000;
 
@@ -928,6 +938,9 @@ velocidade_enviada1=(float)velocidade_enviada1/1000;
 
 			speed_m0= CALCULO*((int16_t)(m0p - old_c0));
 			speed_m1= CALCULO*((int16_t)(m1p - old_c1));
+
+		    speed_usb_0=speed_m0*1000;
+			speed_usb_1=speed_m1*1000;
 
 			//motor 0
 			e_m0= velocidade_des0-speed_m0;
